@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acesso Exclusivo +18</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #2c003e, #ff007f);
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+    .quiz-box {
+      max-width: 400px;
+      margin: auto;
+      background: rgba(0,0,0,0.8);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff007f;
+      animation: pulseBox 2s infinite;
+    }
+    button {
+      background: #ff007f;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      margin: 12px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+    button:hover {
+      background: #ff3399;
+    }
+    .hidden {
+      display: none;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
+    }
+    @keyframes pulseBox {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>  <div class="quiz-box">
+    <div id="step1">
+      <h2>Você tem mais de 18 anos?</h2>
+      <button onclick="nextStep(1)">Sim, tenho</button>
+      <button onclick="alert('Conteúdo exclusivo apenas para maiores de idade.');">Não</button>
+    </div><div id="step2" class="hidden">
+  <h2>Quer receber acesso ao conteúdo exclusivo +18 dela no Telegram?</h2>
+  <button onclick="nextStep(2)">Sim, quero agora!</button>
+  <button onclick="alert('Quem não quer, não entra!');">Não tô preparado</button>
+</div>
+
+<div id="step3" class="hidden">
+  <h2>Último passo!</h2>
+  <p>Clique no botão abaixo para entrar no grupo secreto no Telegram e ver TUDO!</p>
+  <a href="https://t.me/Gostoz4bot" target="_blank">
+    <button>ENTRAR AGORA</button>
+  </a>
+</div>
+
+  </div>  <script>
+    function nextStep(step) {
+      document.getElementById('step' + step).classList.add('hidden');
+      document.getElementById('step' + (step + 1)).classList.remove('hidden');
+    }
+  </script></body>
+</html>
